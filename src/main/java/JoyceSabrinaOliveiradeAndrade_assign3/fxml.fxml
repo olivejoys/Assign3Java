@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ToggleGroup?>
+
+<?import javafx.scene.control.ColorPicker?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="JoyceSabrinaOliveiradeAndrade_assign3.TextSettingsController"
+      stylesheets="@styles.css">
+    <Label text="Text Settings Experiment" styleClass="title-label"/>
+
+    <!-- Text Entry -->
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Change Text:"/>
+        <TextField fx:id="textEntryField" promptText="Enter new text"/>
+    </HBox>
+    <Label fx:id="textLabel" alignment="CENTER" text="Assignment3"/>
+
+    <!-- Font Size -->
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroup"/>
+    </fx:define>
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Text Size:"/>
+
+        <RadioButton fx:id="smallSizeRadioButton" text="Small" toggleGroup="$toggleGroup"/>
+        <RadioButton fx:id="mediumSizeRadioButton" text="Medium" toggleGroup="$toggleGroup"/>
+        <RadioButton fx:id="largeSizeRadioButton" text="Large" toggleGroup="$toggleGroup"/>
+
+    </HBox>
+
+    <!-- Text Alignment -->
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Alignment"/>
+        <RadioButton fx:id="leftAlignmentRadioButton" text="Left"/>
+        <RadioButton fx:id="centerAlignmentRadioButton" text="Center"/>
+        <RadioButton fx:id="rightAlignmentRadioButton" text="Right"/>
+    </HBox>
+
+    <!-- Font Style -->
+    <HBox alignment="CENTER" spacing="10">
+        <CheckBox fx:id="boldCheckBox" text="Bold"/>
+        <CheckBox fx:id="italicCheckBox" text="Italic"/>
+    </HBox>
+
+     <!--Foreground Color-->
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Text Color:"/>
+        <ComboBox fx:id="textColorComboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Black"/>
+                    <String fx:value="Dark Green"/>
+                    <String fx:value="Navy"/>
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Black"/>
+            </value>
+        </ComboBox>
+    </HBox>
+
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Background Color:"/>
+        <ComboBox fx:id="bgColorComboBox">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Grey"/>
+                    <String fx:value="Wheat"/>
+                    <String fx:value="White"/>
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Grey"/>
+            </value>
+        </ComboBox>
+    </HBox>
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" text="Reset"/>
+        <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+    </HBox>
+
+</VBox>

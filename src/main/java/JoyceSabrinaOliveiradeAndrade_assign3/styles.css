@@ -1,0 +1,81 @@
+/* Default font for the entire UI */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 16pt;
+}
+
+/* Title label style */
+.title-label {
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}
+
+/* Display label with a border */
+#textLabel {
+    -fx-border-color: #3498db; /* Choose your desired color */
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-padding: 5;
+}
+
+/* Font size classes */
+.small-font {
+    -fx-font-size: 12pt;
+}
+
+.medium-font {
+    -fx-font-size: 16pt;
+}
+
+.large-font {
+    -fx-font-size: 24pt;
+}
+
+/* Text alignment classes */
+.left-align {
+    -fx-alignment: baseline-left;
+}
+
+.center-align {
+    -fx-alignment: baseline-center;
+}
+
+.right-align {
+    -fx-alignment: baseline-right;
+}
+
+/* Font style classes */
+.bold {
+    -fx-font-weight: bold;
+}
+
+.italic {
+    -fx-font-style: italic;
+}
+
+/* Text color classes */
+.text-black {
+    -fx-text-fill: black;
+}
+
+.text-darkgreen {
+    -fx-text-fill: darkgreen;
+}
+
+.text-navy {
+    -fx-text-fill: navy;
+}
+
+/* Background color classes */
+.background-grey {
+    -fx-background-color: grey;
+}
+
+.background-wheat {
+    -fx-background-color: wheat;
+}
+
+.background-white {
+    -fx-background-color: white;
+}
