@@ -12,7 +12,9 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.ToggleGroup?>
 
+
 <?import javafx.scene.control.ColorPicker?>
+<!--linking-->
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="JoyceSabrinaOliveiradeAndrade_assign3.TextSettingsController"
       stylesheets="@styles.css">

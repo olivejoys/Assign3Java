@@ -27,7 +27,6 @@ public class TextSettingsController {
         VBox root = loader.load();
 
         TextSettingsController controller = loader.getController();
-        // You may need to set additional properties or values in the controller if necessary
 
         Scene scene = new Scene(root);
         primaryStage.setTitle("Text Settings Application");
@@ -80,7 +79,6 @@ public class TextSettingsController {
         // Initialize UI components or set default values here
         textColorComboBox.getItems().addAll("Black", "Dark Green", "Navy");
         bgColorComboBox.getItems().addAll("Grey", "Wheat", "White");
-        // Add the following lines to set default values
         textColorComboBox.getSelectionModel().select("Black");
         bgColorComboBox.getSelectionModel().select("Grey");
     }
