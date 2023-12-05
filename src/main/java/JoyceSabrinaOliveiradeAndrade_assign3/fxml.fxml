@@ -14,7 +14,8 @@
 
 
 <?import javafx.scene.control.ColorPicker?>
-<!--linking-->
+
+<!--linking files-->
 <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="JoyceSabrinaOliveiradeAndrade_assign3.TextSettingsController"
       stylesheets="@styles.css">

@@ -11,7 +11,7 @@
     -fx-padding: 10 0;
 }
 
-/* Display label with a border */
+/* Display label with a border label*/
 #textLabel {
     -fx-border-color: #3498db;
     -fx-border-width: 2;

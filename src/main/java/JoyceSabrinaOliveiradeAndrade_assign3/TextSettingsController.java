@@ -179,7 +179,7 @@ public class TextSettingsController {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             // Properly exit the JavaFX application
-            System.exit(0);
+            System.exit(0); //exiting
                    }
 
     }
