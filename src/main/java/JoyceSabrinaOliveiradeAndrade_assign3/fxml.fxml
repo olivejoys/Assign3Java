@@ -24,33 +24,26 @@
     <!-- Text Entry -->
     <HBox alignment="CENTER" spacing="10">
         <Label text="Change Text:"/>
-        <TextField fx:id="textEntryField" promptText="Enter new text"/>
+        <TextField fx:id="textEntryField" promptText="Enter new text" onAction="#handleTextChange"/>
     </HBox>
     <Label fx:id="textLabel" alignment="CENTER" text="Assignment3"/>
 
     <!-- Font Size -->
-    <fx:define>
-        <ToggleGroup fx:id="toggleGroup"/>
-    </fx:define>
     <HBox alignment="CENTER" spacing="10">
         <Label text="Text Size:"/>
 
-        <RadioButton fx:id="smallSizeRadioButton" text="Small" toggleGroup="$toggleGroup"/>
-        <RadioButton fx:id="mediumSizeRadioButton" text="Medium" toggleGroup="$toggleGroup"/>
-        <RadioButton fx:id="largeSizeRadioButton" text="Large" toggleGroup="$toggleGroup"/>
+        <RadioButton fx:id="smallSizeRadioButton" mnemonicParsing="false" text="Small" toggleGroup="$sizeToggleGroup" onAction="#handleSizeChange"/>
+        <RadioButton fx:id="mediumSizeRadioButton" mnemonicParsing="false" text="Medium" toggleGroup="$sizeToggleGroup" onAction="#handleSizeChange"/>
+        <RadioButton fx:id="largeSizeRadioButton" mnemonicParsing="false" text="Large" toggleGroup="$sizeToggleGroup" onAction="#handleSizeChange"/>
 
     </HBox>
 
     <!-- Text Alignment -->
-
-    <fx:define>
-        <ToggleGroup fx:id="toggleGroup2"/>
-    </fx:define>
     <HBox alignment="CENTER" spacing="10">
         <Label text="Alignment"/>
-        <RadioButton fx:id="leftAlignmentRadioButton" text="Left" toggleGroup="$toggleGroup2"/>
-        <RadioButton fx:id="centerAlignmentRadioButton" text="Center" toggleGroup="$toggleGroup2"/>
-        <RadioButton fx:id="rightAlignmentRadioButton" text="Right" toggleGroup="$toggleGroup2"/>
+        <RadioButton fx:id="leftAlignmentRadioButton" mnemonicParsing="false" text="Left" toggleGroup="$alignmentToggleGroup" onAction="#handleAlignmentChange"/>
+        <RadioButton fx:id="centerAlignmentRadioButton" mnemonicParsing="false" text="Center" toggleGroup="$alignmentToggleGroup" onAction="#handleAlignmentChange"/>
+        <RadioButton fx:id="rightAlignmentRadioButton"  mnemonicParsing="false" text="Right" toggleGroup="$alignmentToggleGroup" onAction="#handleAlignmentChange"/>
     </HBox>
 
     <!-- Font Style -->

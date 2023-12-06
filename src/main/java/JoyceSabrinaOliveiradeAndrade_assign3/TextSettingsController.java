@@ -79,6 +79,8 @@ public class TextSettingsController extends Application {
     @FXML
     public void initialize() {
         // Initialize UI components or set default values here
+        sizeToggleGroup = new ToggleGroup();
+        alignmentToggleGroup = new ToggleGroup();
         textColorComboBox.getItems().addAll("Black", "Dark Green", "Navy");
         bgColorComboBox.getItems().addAll("Grey", "Wheat", "White");
         textColorComboBox.getSelectionModel().select("Black");
@@ -86,7 +88,7 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleSizeChange() {
+    public void handleSizeChange(ActionEvent actionEvent) {
         RadioButton selectedRadioButton = (RadioButton)
                 sizeToggleGroup.getSelectedToggle();
         if (selectedRadioButton != null) {
@@ -97,7 +99,7 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleAlignmentChange() {
+    public void handleAlignmentChange(ActionEvent actionEvent) {
         RadioButton selectedRadioButton = (RadioButton) alignmentToggleGroup.getSelectedToggle();
         if (selectedRadioButton != null) {
             String alignment = selectedRadioButton.getText().toLowerCase();
@@ -132,7 +134,7 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleBackgroundColorChange() {
+    public void handleBackgroundColorChange(ActionEvent actionEvent) {
         int selectedIndex = bgColorComboBox.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0 && selectedIndex < bgColorClasses.length) {
             textLabel.getStyleClass().removeAll(bgColorClasses);
@@ -141,7 +143,7 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleTextChange() {
+    public void handleTextChange(ActionEvent actionEvent) {
         String newText = textEntryField.getText();
         textLabel.setText(newText);
         textEntryField.clear();
