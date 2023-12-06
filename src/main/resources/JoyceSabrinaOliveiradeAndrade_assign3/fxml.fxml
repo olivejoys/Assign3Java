@@ -42,15 +42,11 @@
     </HBox>
 
     <!-- Text Alignment -->
-
-    <fx:define>
-        <ToggleGroup fx:id="toggleGroup2"/>
-    </fx:define>
     <HBox alignment="CENTER" spacing="10">
         <Label text="Alignment"/>
-        <RadioButton fx:id="leftAlignmentRadioButton" text="Left" toggleGroup="$toggleGroup2"/>
-        <RadioButton fx:id="centerAlignmentRadioButton" text="Center" toggleGroup="$toggleGroup2"/>
-        <RadioButton fx:id="rightAlignmentRadioButton" text="Right" toggleGroup="$toggleGroup2"/>
+        <RadioButton fx:id="leftAlignmentRadioButton" text="Left"/>
+        <RadioButton fx:id="centerAlignmentRadioButton" text="Center"/>
+        <RadioButton fx:id="rightAlignmentRadioButton" text="Right"/>
     </HBox>
 
     <!-- Font Style -->
@@ -95,8 +91,10 @@
 
     <!-- Buttons -->
     <HBox alignment="CENTER" spacing="10">
-        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" text="Reset"/>
-        <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset"
+                text="Reset"/>
+        <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleExit"
+                text="Exit" />
     </HBox>
 
 </VBox>

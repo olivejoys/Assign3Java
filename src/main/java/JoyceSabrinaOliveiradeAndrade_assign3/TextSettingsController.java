@@ -1,5 +1,6 @@
 package JoyceSabrinaOliveiradeAndrade_assign3;
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,8 +19,9 @@ import java.util.Optional;
 
 import static javafx.application.Application.launch;
 
-public class TextSettingsController {
+public class TextSettingsController extends Application {
 
+    @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource
                 ("fxml.fxml"));
@@ -33,7 +35,7 @@ public class TextSettingsController {
         primaryStage.setScene(scene);
         primaryStage.show();
         //linking stylesheets
-        scene.getStylesheets().add(getClass().getResource("style.css").
+        scene.getStylesheets().add(getClass().getResource("styles.css").
                 toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -85,7 +87,8 @@ public class TextSettingsController {
 
     @FXML
     public void handleSizeChange() {
-        RadioButton selectedRadioButton = (RadioButton) sizeToggleGroup.getSelectedToggle();
+        RadioButton selectedRadioButton = (RadioButton)
+                sizeToggleGroup.getSelectedToggle();
         if (selectedRadioButton != null) {
             String sizeClass = selectedRadioButton.getStyleClass().get(0);
             textLabel.getStyleClass().clear();

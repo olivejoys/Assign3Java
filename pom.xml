@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.assign3java/com.example.assign3java.HelloApplication
+                                com.example.assign3java/JoyceSabrinaOliveiradeAndrade_assign3.TextSettingsController
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
