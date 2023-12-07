@@ -1,18 +1,33 @@
+/**
+ * TextSettingsController class is a JavaFX controller for a text customization
+ ** application. By using this class, the users can modify various properties of
+ * a text label, size, alignment, style which could be bold and italic, the text
+ * colour, and background colour.
+ *
+ * The class extends the JavaFx Application also defines the behaviour
+ * for the associated FXML file.
+ *
+ * @author Joyce Sabrina Oliveira de Andrade
+ * @version 1.0
+ */
+
+
 package JoyceSabrinaOliveiradeAndrade_assign3;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.util.Optional;
@@ -20,6 +35,7 @@ import java.util.Optional;
 import static javafx.application.Application.launch;
 
 public class TextSettingsController extends Application {
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,16 +48,23 @@ public class TextSettingsController extends Application {
 
         Scene scene = new Scene(root);
         primaryStage.setTitle("Text Settings Application");
+        scene.getStylesheets().add("styles.css");
+        System.out.print(scene.getStylesheets());
+              //  toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
         //linking stylesheets
-        scene.getStylesheets().add(getClass().getResource("styles.css").
-                toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.show();
+
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
 
     }
 
+    /**
+     * The main method to launch the JavaFX application.
+     *
+     * @param args Command-line arguments.
+     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -69,6 +92,22 @@ public class TextSettingsController extends Application {
     @FXML
     private ComboBox<String> bgColorComboBox;
 
+    @FXML
+    private RadioButton smallSizeRadioButton;
+
+    @FXML
+    private RadioButton mediumSizeRadioButton;
+
+    @FXML
+    private RadioButton largeSizeRadioButton;
+
+    @FXML
+    private RadioButton leftAlignmentRadioButton;
+    @FXML
+    private RadioButton centerAlignmentRadioButton;
+    @FXML
+    private RadioButton rightAlignmentRadioButton;
+
 
     // Arrays for efficiency
     private final String[] bgColorClasses = {"background-grey",
@@ -80,7 +119,17 @@ public class TextSettingsController extends Application {
     public void initialize() {
         // Initialize UI components or set default values here
         sizeToggleGroup = new ToggleGroup();
+        System.out.println(smallSizeRadioButton);
+        smallSizeRadioButton.setToggleGroup(sizeToggleGroup);
+        mediumSizeRadioButton.setToggleGroup(sizeToggleGroup);
+        largeSizeRadioButton.setToggleGroup(sizeToggleGroup);
+
         alignmentToggleGroup = new ToggleGroup();
+        leftAlignmentRadioButton.setToggleGroup(alignmentToggleGroup);
+        centerAlignmentRadioButton.setToggleGroup(alignmentToggleGroup);
+        rightAlignmentRadioButton.setToggleGroup(alignmentToggleGroup);
+
+
         textColorComboBox.getItems().addAll("Black", "Dark Green", "Navy");
         bgColorComboBox.getItems().addAll("Grey", "Wheat", "White");
         textColorComboBox.getSelectionModel().select("Black");
@@ -88,27 +137,42 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleSizeChange(ActionEvent actionEvent) {
+    public void handleSizeChange(MouseEvent mouseEvent) {
         RadioButton selectedRadioButton = (RadioButton)
                 sizeToggleGroup.getSelectedToggle();
+        System.out.println(selectedRadioButton);
         if (selectedRadioButton != null) {
-            String sizeClass = selectedRadioButton.getStyleClass().get(0);
+            String sizeClass = selectedRadioButton.getText();
             textLabel.getStyleClass().clear();
             textLabel.getStyleClass().add(sizeClass);
         }
     }
 
     @FXML
-    public void handleAlignmentChange(ActionEvent actionEvent) {
+    public void handleAlignmentChange(MouseEvent mouseEvent) {
         RadioButton selectedRadioButton = (RadioButton) alignmentToggleGroup.getSelectedToggle();
+
         if (selectedRadioButton != null) {
-            String alignment = selectedRadioButton.getText().toLowerCase();
-            textLabel.setAlignment(Pos.valueOf(alignment.toUpperCase()));
+            String alignment = selectedRadioButton.getText();
+            if (alignment.toUpperCase().equals("RIGHT")) {
+                textLabel.setAlignment(Pos.BASELINE_RIGHT);
+
+            }
+            if (alignment.toUpperCase().equals("LEFT")) {
+                textLabel.setAlignment(Pos.BASELINE_LEFT);
+
+            }
+            if (alignment.toUpperCase().equals("CENTER")) {
+                textLabel.setAlignment(Pos.CENTER);
+
+            }
+
         }
     }
 
     @FXML
-    public void handleBoldChange() {
+    public void handleBoldChange(MouseEvent event) {
+        System.out.println("SHERE CHANGE NOLD");
         if (boldCheckBox.isSelected()) {
             textLabel.getStyleClass().add("bold");
         } else {
@@ -117,7 +181,7 @@ public class TextSettingsController extends Application {
     }
 
     @FXML
-    public void handleItalicChange() {
+    public void handleItalicChange(MouseEvent event) {
         if (italicCheckBox.isSelected()) {
             textLabel.getStyleClass().add("italic");
         } else {
@@ -183,9 +247,8 @@ public class TextSettingsController extends Application {
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Properly exit the JavaFX application
             System.exit(0); //exiting
-                   }
+        }
 
     }
 }

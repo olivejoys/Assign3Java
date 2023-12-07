@@ -1,17 +1,16 @@
-/*css */
+/* CSS */
+
 .root {
     -fx-font-family: "Arial";
     -fx-font-size: 16pt;
 }
 
-/* Title label style */
 .title-label {
     -fx-font-size: 20pt;
     -fx-font-weight: bold;
     -fx-padding: 10 0;
 }
 
-/* Display label with a border label*/
 #textLabel {
     -fx-border-color: #3498db;
     -fx-border-width: 2;
@@ -19,7 +18,6 @@
     -fx-padding: 5;
 }
 
-/* Font size classes */
 .small-font {
     -fx-font-size: 12pt;
 }
@@ -32,7 +30,6 @@
     -fx-font-size: 24pt;
 }
 
-/* Text alignment classes */
 .left-align {
     -fx-alignment: baseline-left;
 }
@@ -45,7 +42,6 @@
     -fx-alignment: baseline-right;
 }
 
-/* Font style classes */
 .bold {
     -fx-font-weight: bold;
 }
@@ -54,7 +50,6 @@
     -fx-font-style: italic;
 }
 
-/* Text color classes */
 .text-black {
     -fx-text-fill: black;
 }
@@ -67,7 +62,6 @@
     -fx-text-fill: navy;
 }
 
-/* Background color classes */
 .background-grey {
     -fx-background-color: grey;
 }
